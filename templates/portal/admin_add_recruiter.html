@@ -7,7 +7,8 @@
 
         <div class="col-md-10 py-5 px-5">
             <div class="mb-5">
-                <a href="{% url 'admin_users' %}" class="text-muted text-decoration-none small fw-bold mb-2 d-inline-block">
+                <a href="{% url 'admin_users' %}"
+                    class="text-muted text-decoration-none small fw-bold mb-2 d-inline-block">
                     <i class="fas fa-arrow-left me-1"></i> Back to Users
                 </a>
                 <h1 class="fw-bold h3 mb-1">Onboard New Recruiter</h1>
@@ -17,7 +18,7 @@
             <div class="premium-card p-5 col-lg-8 mx-auto">
                 <form method="POST">
                     {% csrf_token %}
-                    
+
                     <!-- Basic Info -->
                     <div class="mb-5">
                         <h6 class="text-primary fw-bold text-uppercase small mb-4">Basic Information</h6>
@@ -28,7 +29,8 @@
                                     <span class="input-group-text bg-light border-end-0 text-muted">
                                         <i class="fas fa-user"></i>
                                     </span>
-                                    <input type="text" name="username" class="form-control border-start-0" placeholder="e.g. johndoe" required>
+                                    <input type="text" name="username" class="form-control border-start-0"
+                                        placeholder="e.g. johndoe" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -37,7 +39,8 @@
                                     <span class="input-group-text bg-light border-end-0 text-muted">
                                         <i class="fas fa-envelope"></i>
                                     </span>
-                                    <input type="email" name="email" class="form-control border-start-0" placeholder="name@company.com" required>
+                                    <input type="email" name="email" class="form-control border-start-0"
+                                        placeholder="name@company.com" required>
                                 </div>
                             </div>
                         </div>
@@ -49,18 +52,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold text-muted">Phone Number</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light border-end-0 text-muted">+91</span>
-                                    <input type="tel" 
-                                           name="phone" 
-                                           class="form-control border-start-0" 
-                                           placeholder="9876543210"
-                                           pattern="[1-9][0-9]{9}"
-                                           title="Please enter exactly 10 digits (cannot start with 0)"
-                                           required
-                                           maxlength="10"
-                                           oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 10);">
-                                </div>
+                                <input type="text" name="phone" class="form-control"
+                                    placeholder="10-digit Mobile Number" maxlength="10" pattern="\d{10}" required
+                                    title="Please enter exactly 10 digits">
                             </div>
                         </div>
                     </div>
@@ -75,7 +69,8 @@
                                     <span class="input-group-text bg-light border-end-0 text-muted">
                                         <i class="fas fa-lock"></i>
                                     </span>
-                                    <input type="password" name="password" class="form-control border-start-0" placeholder="••••••••" required>
+                                    <input type="password" name="password" class="form-control border-start-0"
+                                        placeholder="••••••••" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -84,7 +79,8 @@
                                     <span class="input-group-text bg-light border-end-0 text-muted">
                                         <i class="fas fa-shield-alt"></i>
                                     </span>
-                                    <input type="password" name="confirm_password" class="form-control border-start-0" placeholder="••••••••" required>
+                                    <input type="password" name="confirm_password" class="form-control border-start-0"
+                                        placeholder="••••••••" required>
                                 </div>
                             </div>
                         </div>
@@ -105,6 +101,7 @@
     .input-group-text {
         border-radius: 8px 0 0 8px;
     }
+
     .form-control {
         border-radius: 0 8px 8px 0 !important;
     }

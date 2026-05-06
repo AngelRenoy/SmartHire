@@ -99,6 +99,8 @@ def register(request):
 
         if password != confirm_password:
             messages.error(request, "Passwords do not match.")
+        elif not phone or not phone.isdigit() or len(phone) != 10:
+            messages.error(request, "Please enter a valid 10-digit phone number.")
         elif User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
         else:
@@ -206,6 +208,8 @@ def admin_add_recruiter(request):
 
         if password != confirm_password:
             messages.error(request, "Passwords do not match.")
+        elif not phone or not phone.isdigit() or len(phone) != 10:
+            messages.error(request, "Please enter a valid 10-digit phone number.")
         elif User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
         else:
