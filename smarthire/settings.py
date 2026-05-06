@@ -32,7 +32,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-h!*$b!g%uruuxdz4%yvz$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '98.130.46.206,127.0.0.1,localhost').split(',')
+CSRF_TRUSTED_ORIGINS = ['http://98.130.46.206']
 
 
 # Application definition
@@ -83,9 +84,14 @@ WSGI_APPLICATION = 'smarthire.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'mysql://root:@127.0.0.1:3306/new_db_name')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'smarthire',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
 
 AUTH_USER_MODEL = 'portal.User'
