@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'smarthire.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smarthire',
+        'NAME': 'smarthire_db',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
